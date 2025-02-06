@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Azure.Identity;
+using System.Collections.Generic;
 
 namespace NFLTeams.Models
 {
@@ -27,6 +28,20 @@ namespace NFLTeams.Models
                     new Division { DivisionID = "all", Name = "All" }
                 };
                 divisions.AddRange(value);
+            }
+        }
+
+        private List<UserName> userName;
+        public List<UserName> UserName
+        {
+            get => userName;
+            set
+            {
+                userName = new List<UserName>
+                {
+                    new UserName { UserNameID = "all", Name = "All"}
+                };
+                userName.AddRange(value);
             }
         }
 
