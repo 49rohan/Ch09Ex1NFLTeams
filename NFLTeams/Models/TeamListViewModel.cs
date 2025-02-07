@@ -21,29 +21,18 @@ namespace NFLTeams.Models
         }
 
         private List<Division> divisions;
-        public List<Division> Divisions {
-            get => divisions; 
-            set {
+        public List<Division> Divisions
+        {
+            get => divisions;
+            set
+            {
                 divisions = new List<Division> {
                     new Division { DivisionID = "all", Name = "All" }
                 };
                 divisions.AddRange(value);
             }
         }
-
-        private List<UserName> userName;
-        public List<UserName> UserName
-        {
-            get => userName;
-            set
-            {
-                userName = new List<UserName>
-                {
-                    new UserName { UserNameID = "all", Name = "All"}
-                };
-                userName.AddRange(value);
-            }
-        }
+        public string UserName { get; set; }
 
         // methods to help view determine active link
         public string CheckActiveConf(string c) => 
